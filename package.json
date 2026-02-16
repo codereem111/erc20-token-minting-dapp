@@ -1,0 +1,23 @@
+{
+  "name": "mytoken-dapp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy:localhost": "hardhat run --network localhost scripts/deploy.js",
+    "start:frontend": "cd frontend && npm run dev",
+    "start": "concurrently \"npm run node\" \"npm run start:frontend\"",
+    "install:all": "npm install && cd frontend && npm install"
+  },
+  "devDependencies": {
+    "hardhat": "^2.18.0",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2"
+  }
+}

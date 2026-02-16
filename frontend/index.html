@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Universal Token Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js" type="application/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Universal Token Dashboard</h1>
+            <button id="connectBtn" class="btn primary">Connect Wallet</button>
+            <div id="account" class="muted">Not connected</div>
+            <div id="network" class="muted"></div>
+        </header>
+
+        <section class="card">
+            <h3>1. Setup Contract</h3>
+            <label>Contract Address</label>
+            <input id="contractAddress" placeholder="0x..." style="width:100%">
+            <label style="display:block; margin-top:10px;">ABI JSON</label>
+            <textarea id="abiInput" placeholder="Paste ABI here..." style="width:100%; height:100px;"></textarea>
+            <button id="loadBtn" class="btn">Load Contract</button>
+        </section>
+
+        <section class="card grid-2">
+            <div>
+                <h3>Balance</h3>
+                <div id="balance" class="big">— <span class="token-symbol-label">Tokens</span></div>
+                <button id="refreshBalance" class="btn small">Refresh</button>
+            </div>
+            <div>
+                <h3>Transfer</h3>
+                <label>Recipient</label>
+                <input id="recipientAddress" placeholder="0x...">
+                <label>Amount</label>
+                <input id="transferAmount" type="number" placeholder="1.0">
+                <button id="sendBtn" class="btn primary">Send <span class="token-symbol-label">Tokens</span></button>
+                <div id="transferStatus" class="muted" style="margin-top:10px;">—</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h4>System Logs</h4>
+            <div id="status" class="log" style="white-space: pre-wrap; height:120px; overflow:y-auto;">Ready.</div>
+        </section>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
